@@ -4,7 +4,7 @@
 
 - [X] Gerar estrutura do projeto
 - [ ] Adicionar schema `auth`
-- [ ] Adicionar schema `user`
+- [X] Adicionar schema `user`
 - [ ] Codificar campos
 - [ ] Criar endpoint `/auth`
 - [ ] Criar endpoint `/users`
