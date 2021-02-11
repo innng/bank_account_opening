@@ -5,7 +5,7 @@ defmodule BankAccount.Account.User do
   import Ecto.Changeset
 
   schema "users" do
-    field :birth_date, :binary
+    field :birth_date, :date
     field :city, :binary
     field :country, :binary
     field :cpf, :binary, null: false
