@@ -2,7 +2,7 @@
 
 ## To-do List
 
-- [ ] Gerar estrutura do projeto
+- [X] Gerar estrutura do projeto
 - [ ] Adicionar schema `auth`
 - [ ] Adicionar schema `user`
 - [ ] Codificar campos
