@@ -35,5 +35,8 @@ defmodule BankAccount.Account.User do
       :is_completed
     ])
     |> validate_required([:cpf])
+    |> validate_format(:cpf, ~r/(\d{3}\.){2}\d{3}\-\d{2}/)
+    |> validate_format(:email, ~r/@/)
+    |> validate_inclusion(:gender, ["man", "woman", "other"])
   end
 end

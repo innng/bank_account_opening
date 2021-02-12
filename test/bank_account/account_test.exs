@@ -7,24 +7,24 @@ defmodule BankAccount.AccountTest do
     alias BankAccount.Account.User
 
     @valid_attrs %{
-      birth_date: "some birth_date",
+      birth_date: ~D[2021-02-11],
       city: "some city",
       country: "some country",
-      cpf: "some cpf",
-      email: "some email",
-      gender: "some gender",
+      cpf: "000.000.000-00",
+      email: "test@test.com",
+      gender: "other",
       is_completed: true,
       name: "some name",
       referral_code: 42,
       state: "some state"
     }
     @update_attrs %{
-      birth_date: "some updated birth_date",
+      birth_date: ~D[2021-02-12],
       city: "some updated city",
       country: "some updated country",
-      cpf: "some updated cpf",
-      email: "some updated email",
-      gender: "some updated gender",
+      cpf: "000.000.000-01",
+      email: "test@test",
+      gender: "woman",
       is_completed: false,
       name: "some updated name",
       referral_code: 43,
@@ -64,12 +64,12 @@ defmodule BankAccount.AccountTest do
 
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = Account.create_user(@valid_attrs)
-      assert user.birth_date == "some birth_date"
+      assert user.birth_date == ~D[2021-02-11]
       assert user.city == "some city"
       assert user.country == "some country"
-      assert user.cpf == "some cpf"
-      assert user.email == "some email"
-      assert user.gender == "some gender"
+      assert user.cpf == "000.000.000-00"
+      assert user.email == "test@test.com"
+      assert user.gender == "other"
       assert user.is_completed == true
       assert user.name == "some name"
       assert user.referral_code == 42
@@ -83,12 +83,12 @@ defmodule BankAccount.AccountTest do
     test "update_user/2 with valid data updates the user" do
       user = user_fixture()
       assert {:ok, %User{} = user} = Account.update_user(user, @update_attrs)
-      assert user.birth_date == "some updated birth_date"
+      assert user.birth_date == ~D[2021-02-12]
       assert user.city == "some updated city"
       assert user.country == "some updated country"
-      assert user.cpf == "some updated cpf"
-      assert user.email == "some updated email"
-      assert user.gender == "some updated gender"
+      assert user.cpf == "000.000.000-01"
+      assert user.email == "test@test"
+      assert user.gender == "woman"
       assert user.is_completed == false
       assert user.name == "some updated name"
       assert user.referral_code == 43
