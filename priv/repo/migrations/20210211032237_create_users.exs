@@ -6,7 +6,7 @@ defmodule BankAccount.Repo.Migrations.CreateUsers do
       add :name, :binary
       add :email, :binary
       add :cpf, :binary, null: false
-      add :birth_date, :binary
+      add :birth_date, :date
       add :gender, :binary
       add :city, :binary
       add :state, :binary

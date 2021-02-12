@@ -5,7 +5,7 @@ defmodule BankAccount.Account.User do
   import Ecto.Changeset
 
   schema "users" do
-    field :birth_date, :binary
+    field :birth_date, :date
     field :city, :binary
     field :country, :binary
     field :cpf, :binary, null: false
@@ -35,5 +35,8 @@ defmodule BankAccount.Account.User do
       :is_completed
     ])
     |> validate_required([:cpf])
+    |> validate_format(:cpf, ~r/(\d{3}\.){2}\d{3}\-\d{2}/)
+    |> validate_format(:email, ~r/@/)
+    |> validate_inclusion(:gender, ["man", "woman", "other"])
   end
 end
